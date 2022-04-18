@@ -99,6 +99,35 @@ defmodule Cards do
     |> Cards.deal(hand_size)
   end
 
+  def get_map do
+    person = %{ name: "Ricardo", lastname: "lence"}
+    #tambien podemos obtener un valor en concreto
+    name_person = person.name
+    # el Pattern Matching con map es de la siguiente manera
+    %{lastname: last_name} = person
+    {last_name, name_person}
+  end
+
+  def update_map do
+    person = %{ name: "Ricardo", lastname: "lence"}
+
+    new_person = Map.put(person, :lastname, "largo")
+    #or
+    new_person2 = %{person | lastname: "largo"} # solo funciona para cambiar alguna propiedad existente, no agrega una
+
+  end
+
+  def list_example do
+    # las listas son una mescla de array, tuplas y map
+    colors = [{:primary, "red"}, {:secundary, "grren"}]
+    # para acceder a una de sus valores
+    colors[:primary]
+
+    # otra forma de escribir list
+    colors2 = [primary: "red", secundary: "blue"]
+
+  end
+
 end
 
 
